@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details Annonce
+{% endblock %}
+{% block body %}
+
+<h4>Titre :
+{{ annonce }}</h4>
+</h4>
+<h4>Date Mise a jour :
+{{ annonce.updatedAt | date('d/m/Y à h\\hi') }}</h4>
+<h4>Description :
+{{ annonce.description | raw }}</h4>
+
+{% endblock %}

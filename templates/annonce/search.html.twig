@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Rech Annonces
+                
+                    Search for term :
+    {{ search_term }}
+{% endblock %}
+{% block body %}
+
+    {% if annonces|length > 0 %}
+        {% for annonce in annonces %}
+
+            <h4>{{ annonce.titre }}</h4>
+            <small>
+                UpdatedAt:
+                {{ annonce.updatedAt|date('d/m/Y à h:i')  }}
+            </small>
+            <p>{{ annonce.description|raw }}</p>
+        {% endfor %}
+    {% else %}
+        <div>No announcements have been posted with this term.</div>
+    {% endif %}
+{% endblock %}
